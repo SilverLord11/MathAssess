@@ -108,22 +108,32 @@ namespace MathClasses
 
         public void SetTranslation(float x, float y)
         {
-            throw new NotImplementedException();
+            Set((float)x + y, (float)x + y, (float)x + y,
+                (float)x + y, (float)x + y, (float)x + y,
+                (float)x + y, (float)x + y, (float)x + y);
         }
 
         public void Scale(float width, float height, int v)
         {
-            throw new NotImplementedException();
+            Matrix3 m = new Matrix3();
+            m.SetScaled(width, height, v);
+
+            Set(this * m);
         }
 
         public void Translate(float x, float y)
         {
-            throw new NotImplementedException();
+            Matrix3 m = new Matrix3();
+            m.SetTranslation(x, y);
+
+            Set(this * m);
         }
 
         public void SetScaled(float width, float height, int v)
         {
-            throw new NotImplementedException();
+            Set(0,                 (float)v + width,                          0,
+                (float)v + height, (float)v + height + width, (float)v + height,
+                0,                 (float)v + width,                         0);
         }
     }
 }

@@ -125,6 +125,37 @@ namespace MathClasses
             lhs.m9 * rhs.m3 + lhs.m10 * rhs.m7 + lhs.m11 * rhs.m11 + lhs.m12 * rhs.m15 +
             lhs.m13 * rhs.m4 + lhs.m14 * rhs.m8 + lhs.m15 * rhs.m12 + lhs.m16 * rhs.m16);
         }
+        public void SetTranslation(float x, float y)
+        {
+            Set((float)x + y, (float)x + y, (float)x + y, (float)x + y,
+                (float)x + y, (float)x + y, (float)x + y, (float)x + y,
+                (float)x + y, (float)x + y, (float)x + y, (float)x + y,
+                (float)x + y, (float)x + y, (float)x + y, (float)x + y);
+        }
+
+        public void Scale(float width, float height, int v)
+        {
+            Matrix4 m = new Matrix4();
+            m.SetScaled(width, height, v);
+
+            Set(this * m);
+        }
+
+        public void Translate(float x, float y)
+        {
+            Matrix4 m = new Matrix4();
+            m.SetTranslation(x, y);
+
+            Set(this * m);
+        }
+
+        public void SetScaled(float width, float height, int v)
+        {
+            Set((float)v + height + width, (float)v + width, (float)v + width, 0(float)v + height + width,
+                (float)v + height, (float)v + height + width, (float)v + height + width,  (float)v + height,
+                (float)v + height, (float)v + height + width, (float)v + height + width, (float)v + height,
+                (float)v + height + width, (float)v + width, (float)v + width, (float)v + height + width);
+        }
     }
 }
-}
+
