@@ -68,7 +68,7 @@ namespace MathClasses
 
         public static Vector4 operator *(Matrix4 lhs, Vector4 rhs)
         {
-            return new Vector4((lhs.m1 * rhs.x) + (lhs.m5 * rhs.y) + (lhs.m9 * rhs.z) + (lhs.m13 * rhs.w));
+            return new Vector4(lhs.m1 * rhs.x, lhs.m5 * rhs.y, lhs.m9 * rhs.z, lhs.m13 * rhs.w);
         }
 
         public void SetRotateX(double radians)
@@ -122,10 +122,10 @@ namespace MathClasses
         {
 
             return new Matrix4(
-            lhs.m1 * rhs.m1 + lhs.m2 * rhs.m5 + lhs.m3 * rhs.m9 + lhs.m4 * rhs.m13 +
-            lhs.m5 * rhs.m2 + lhs.m6 * rhs.m6 + lhs.m7 * rhs.m10 + lhs.m8 * rhs.m14 +
-            lhs.m9 * rhs.m3 + lhs.m10 * rhs.m7 + lhs.m11 * rhs.m11 + lhs.m12 * rhs.m15 +
-            lhs.m13 * rhs.m4 + lhs.m14 * rhs.m8 + lhs.m15 * rhs.m12 + lhs.m16 * rhs.m16);
+            lhs.m1 * rhs.m1, lhs.m2 * rhs.m5, lhs.m3 * rhs.m9, lhs.m4 * rhs.m13,
+            lhs.m5 * rhs.m2, lhs.m6 * rhs.m6, lhs.m7 * rhs.m10, lhs.m8 * rhs.m14,
+            lhs.m9 * rhs.m3, lhs.m10 * rhs.m7, lhs.m11 * rhs.m11, lhs.m12 * rhs.m15,
+            lhs.m13 * rhs.m4, lhs.m14 * rhs.m8, lhs.m15 * rhs.m12, lhs.m16 * rhs.m16);
         }
         public void SetTranslation(float x, float y)
         {
