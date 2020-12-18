@@ -73,12 +73,13 @@ namespace MathClasses
             0, (float)Math.Sin(radians), (float)Math.Cos(radians));
         }
 
-        public void RotateX(double radians)
+        public Matrix3 RotateX(double radians)
         {
             Matrix3 m = new Matrix3();
             m.SetRotateX(radians);
 
             Set(this * m);
+            return m;
         }
 
         public void SetRotateY(double radians)
@@ -88,12 +89,13 @@ namespace MathClasses
             (float)Math.Sin(radians), 0, (float)Math.Cos(radians));
         }
 
-        public void RotateY(double radians)
+        public Matrix3 RotateY(double radians)
         {
             Matrix3 m = new Matrix3();
             m.SetRotateY(radians);
 
             Set(this * m);
+            return m;
         }
 
         public void SetRotateZ(double radians)
@@ -103,12 +105,13 @@ namespace MathClasses
             0, 0, 1);
         }
 
-        public void RotateZ(double radians)
+        public Matrix3 RotateZ(double radians)
         {
             Matrix3 m = new Matrix3();
             m.SetRotateZ(radians);
 
             Set(this * m);
+            return m;
         }
 
         public void SetTranslation(float x, float y)
@@ -118,20 +121,22 @@ namespace MathClasses
                 (float)x + y, (float)x + y, (float)x + y);
         }
 
-        public void Scale(float width, float height, int v)
+        public Matrix3 Scale(float width, float height, int v)
         {
             Matrix3 m = new Matrix3();
             m.SetScaled(width, height, v);
 
             Set(this * m);
+            return m;
         }
 
-        public void Translate(float x, float y)
+        public Matrix3 Translate(float x, float y)
         {
             Matrix3 m = new Matrix3();
             m.SetTranslation(x, y);
 
             Set(this * m);
+            return m;
         }
 
         public void SetScaled(float width, float height, int v)

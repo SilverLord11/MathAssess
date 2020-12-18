@@ -8,10 +8,7 @@ namespace MathClasses
 {
     public class Vector4
     {
-        public float y;
-        public float z;
-        public float x;
-        public float w;
+        public float x, y, z, w;
 
         public Vector4(float x, float y, float z, float w)
         {

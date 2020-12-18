@@ -76,12 +76,13 @@ namespace MathClasses
                 0, 0, (float)Math.Sin(radians), (float)Math.Cos(radians));
         }
 
-        public void RotateX(double radians)
+        public Matrix4 RotateX(double radians)
         {
             Matrix4 m = new Matrix4();
             m.SetRotateX(radians);
 
             Set(this * m);
+            return m;
         }
 
         public void SetRotateY(double radians)
@@ -92,12 +93,13 @@ namespace MathClasses
                 (float)Math.Sin(radians), 0, 0, (float)Math.Cos(radians));
         }
 
-        public void RotateY(double radians)
+        public Matrix4 RotateY(double radians)
         {
             Matrix4 m = new Matrix4();
             m.SetRotateY(radians);
 
             Set(this * m);
+            return m;
         }
 
         public void SetRotateZ(double radians)
@@ -108,13 +110,15 @@ namespace MathClasses
                 0, 0, 0, 1);
         }
 
-        public void RotateZ(double radians)
+        public Matrix4 RotateZ(double radians)
         {
             Matrix4 m = new Matrix4();
             m.SetRotateZ(radians);
 
             Set(this * m);
+            return m;
         }
+
         public static Matrix4 operator *(Matrix4 lhs, Matrix4 rhs)
         {
 
@@ -132,20 +136,22 @@ namespace MathClasses
                 (float)x + y, (float)x + y, (float)x + y, (float)x + y);
         }
 
-        public void Scale(float width, float height, int v)
+        public Matrix4 Scale(float width, float height, int v)
         {
             Matrix4 m = new Matrix4();
             m.SetScaled(width, height, v);
 
             Set(this * m);
+            return m;
         }
 
-        public void Translate(float x, float y)
+        public Matrix4 Translate(float x, float y)
         {
             Matrix4 m = new Matrix4();
             m.SetTranslation(x, y);
 
             Set(this * m);
+            return m;
         }
 
         public void SetScaled(float width, float height, int v)
