@@ -153,10 +153,10 @@ namespace MathClasses
 
         public void SetScaled(float width, float height, int v)
         {
-            Set((float)v + height + width, (float)v + width, (float)v + width, (float)v + height + width,
-                (float)v + height, (float)v + height + width, (float)v + height + width,  (float)v + height,
-                (float)v + height, (float)v + height + width, (float)v + height + width, (float)v + height,
-                (float)v + height + width, (float)v + width, (float)v + width, (float)v + height + width);
+            Set((float)v + height + width, (float)v + height + width, (float)v + height + width, (float)v + height + width,
+                (float)v + height + width, (float)v + height + width, (float)v + height + width, (float)v + height + width,
+                (float)v + height + width, (float)v + height + width, (float)v + height + width, (float)v + height + width,
+                (float)v + height + width, (float)v + height + width, (float)v + height + width, (float)v + height + width);
         }
     }
 }
