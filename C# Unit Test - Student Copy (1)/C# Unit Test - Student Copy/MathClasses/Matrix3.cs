@@ -21,6 +21,11 @@ namespace MathClasses
         {
             this.v = v;
         }
+
+        public Matrix3(float v1, float v2, float v3, float v4, float v5, float v6, float v7, float v8, float v9)
+        {
+        }
+
         public void Set(float a1, float a2, float a3, float a4, float a5, float a6, float a7, float a8, float a9)
         {
             m1 = a1;

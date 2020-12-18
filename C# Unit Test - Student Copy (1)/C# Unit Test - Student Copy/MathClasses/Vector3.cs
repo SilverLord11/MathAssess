@@ -10,13 +10,6 @@ namespace MathClasses
     {
         public float x, y, z;
 
-        public Vector3()
-        {
-            x = 0;
-            y = 0;
-            z = 0;
-        }
-
         public Vector3(float x, float y, float z)
         {
             this.x = x;
@@ -54,17 +47,12 @@ namespace MathClasses
             return (x * vector.x) + (y * vector.y) + (z * vector.z);
         }
 
-        public static float Dot(Vector3 vector1, Vector3 vector2)
-        {
-            return (vector2.x * vector1.x) + (vector2.y * vector1.y) + (vector2.z * vector1.z);
-        }
-
         public Vector3 Cross(Vector3 vector)
         {
             return new Vector3((y * vector.z) - (z * vector.y), (z * vector.x) - (x * vector.z), (x * vector.y) - (y * vector.x));
         }
 
-        public static Vector3 Normalize(float x, float y, float z)
+        public Vector3 Normalize()
         {
             return new Vector3(x / x, y / y, z / z);
         }

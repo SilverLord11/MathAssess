@@ -17,13 +17,10 @@ namespace MathClasses
             m9 = 0; m10= 0; m11= 1; m12= 0;
             m13= 0; m14= 0; m15= 0; m16= 1;
         }
-        public Matrix4(float v) {
-            m1 = 1; m2 = 0; m3 = 0; m4 = 0;
-            m5 = 0; m6 = 1; m7 = 0; m8 = 0;
-            m9= 0; m10= 0; m11= 1; m12= 0;
-            m13= 0; m14= 0; m15= 0; m16= 1;
-            }
 
+        public Matrix4(float v1, float v2, float v3, float v4, float v5, float v6, float v7, float v8, float v9, float v10, float v11, float v12, float v13, float v14, float v15, float v16)
+        {
+        }
 
         public void Set(float a1, float a2, float a3, float a4, float a5, float a6, float a7, float a8, float a9, float a10, float a11, float a12, float a13, float a14, float a15, float a16)
         {
