@@ -17,13 +17,14 @@ namespace MathClasses
             m9 = 0; m10= 0; m11= 1; m12= 0;
             m13= 0; m14= 0; m15= 0; m16= 1;
         }
-        public Matrix4(float v)
-        {
+        public Matrix4(float v) {
             m1 = 1; m2 = 0; m3 = 0; m4 = 0;
             m5 = 0; m6 = 1; m7 = 0; m8 = 0;
-            m9 = 0; m10 = 0; m11 = 1; m12 = 0;
-            m13 = 0; m14 = 0; m15 = 0; m16 = 1;
-        }
+            m9= 0; m10= 0; m11= 1; m12= 0;
+            m13= 0; m14= 0; m15= 0; m16= 1;
+            }
+
+
         public void Set(float a1, float a2, float a3, float a4, float a5, float a6, float a7, float a8, float a9, float a10, float a11, float a12, float a13, float a14, float a15, float a16)
         {
             m1 = a1;
@@ -119,6 +120,7 @@ namespace MathClasses
         }
         public static Matrix4 operator *(Matrix4 lhs, Matrix4 rhs)
         {
+
             return new Matrix4(
             lhs.m1 * rhs.m1 + lhs.m2 * rhs.m5 + lhs.m3 * rhs.m9 + lhs.m4 * rhs.m13 +
             lhs.m5 * rhs.m2 + lhs.m6 * rhs.m6 + lhs.m7 * rhs.m10 + lhs.m8 * rhs.m14 +
@@ -151,7 +153,7 @@ namespace MathClasses
 
         public void SetScaled(float width, float height, int v)
         {
-            Set((float)v + height + width, (float)v + width, (float)v + width, 0(float)v + height + width,
+            Set((float)v + height + width, (float)v + width, (float)v + width, (float)v + height + width,
                 (float)v + height, (float)v + height + width, (float)v + height + width,  (float)v + height,
                 (float)v + height, (float)v + height + width, (float)v + height + width, (float)v + height,
                 (float)v + height + width, (float)v + width, (float)v + width, (float)v + height + width);

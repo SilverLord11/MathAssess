@@ -9,10 +9,6 @@ namespace MathClasses
     public class Vector3
     {
         public float x, y, z;
-        private float v1;
-        private float v2;
-        private float v3;
-        private float v;
 
         public Vector3()
         {
@@ -20,16 +16,12 @@ namespace MathClasses
             y = 0;
             z = 0;
         }
-        public Vector3(float v)
-        {
-            this.v = v;
-        }
 
-        public Vector3(float v1, float v2, float v3)
+        public Vector3(float x, float y, float z)
         {
-            this.v1 = v1;
-            this.v2 = v2;
-            this.v3 = v3;
+            this.x = x;
+            this.y = y;
+            this.z = z;
         }
 
         public static Vector3 operator +(Vector3 lhs, Vector3 rhs)
@@ -39,6 +31,16 @@ namespace MathClasses
         public static Vector3 operator -(Vector3 lhs, Vector3 rhs)
         {
             return new Vector3(lhs.x - rhs.x, lhs.y - rhs.y, lhs.z - rhs.z);
+        }
+
+        public static Vector3 operator *(Vector3 lhs, float v) 
+        {
+            return new Vector3(lhs.x * v, lhs.y * v, lhs.z * v);
+        }
+
+        public static Vector3 operator *(float v, Vector3 rhs)
+        {
+            return new Vector3(v * rhs.x, v * rhs.y, v * rhs.z);
         }
 
         public float Magnitude()

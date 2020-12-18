@@ -51,14 +51,14 @@ namespace MathClasses
         public static Matrix3 operator *(Matrix3 lhs, Matrix3 rhs)
         {
             return new Matrix3(
-            lhs.m1 * rhs.m1 + lhs.m4 * rhs.m2 + lhs.m7 * rhs.m3 +
-            lhs.m8 * rhs.m6 + lhs.m5 * rhs.m5 + lhs.m2 * rhs.m4 +
-            lhs.m6 * rhs.m8 + lhs.m3 * rhs.m7 + lhs.m9 * rhs.m9);
+            lhs.m1 * rhs.m1 + lhs.m2 * rhs.m4 + lhs.m3 * rhs.m7 +
+            lhs.m4 * rhs.m2 + lhs.m5 * rhs.m5 + lhs.m6 * rhs.m8 +
+            lhs.m7 * rhs.m3 + lhs.m8 * rhs.m6 + lhs.m9 * rhs.m9);
         }
 
         public static Vector3 operator *(Matrix3 lhs, Vector3 rhs)
         {
-            return new Vector3((lhs.m1 * rhs.x) + (lhs.m4 * rhs.y) + (lhs.m7 * rhs.z));
+            return new Vector3(lhs.m1 * rhs.x, lhs.m4 * rhs.y, lhs.m7 * rhs.z);
         }
 
         public void SetRotateX(double radians)

@@ -8,30 +8,25 @@ namespace MathClasses
 {
     public class Vector4
     {
-        public float x1, y1, z1, w1;
-        private float v1;
-        private float v2;
-        private float v3;
-        private float v4;
         private object p;
-        internal float y;
-        internal float z;
-        internal float x;
-        internal float w;
+        public float y;
+        public float z;
+        public float x;
+        public float w;
 
-        public Vector4(float v1, float v2, float v3, float v4)
+        public Vector4(float x, float y, float z, float w)
         {
-            this.v1 = v1;
-            this.v2 = v2;
-            this.v3 = v3;
-            this.v4 = v4;
+            this.x = x;
+            this.y = y;
+            this.z = z;
+            this.w = w;
         }
         public Vector4()
         {
-            x1 = 0;
-            y1 = 0;
-            z1 = 0;
-            w1 = 0;
+            x = 0;
+            y = 0;
+            z = 0;
+            w = 0;
         }
 
         public Vector4(object p)
@@ -41,17 +36,26 @@ namespace MathClasses
 
         public static Vector4 operator +(Vector4 lhs, Vector4 rhs)
         {
-            return new Vector4(lhs.x1 + rhs.x1, lhs.y1 + rhs.y1, lhs.z1 + rhs.z1, lhs.w1 + rhs.w1);
+            return new Vector4(lhs.x + rhs.x, lhs.y + rhs.y, lhs.z + rhs.z, lhs.w + rhs.w);
         }
 
         public static Vector4 operator -(Vector4 lhs, Vector4 rhs)
         {
-            return new Vector4(lhs.x1 - rhs.x1, lhs.y1 - rhs.y1, lhs.z1 - rhs.z1, lhs.w1 - rhs.w1);
+            return new Vector4(lhs.x - rhs.x, lhs.y - rhs.y, lhs.z - rhs.z, lhs.w - rhs.w);
         }
 
         public static Vector4 operator *(Vector4 lhs, float scale)
         {
-            return new Vector4(lhs.x1 * scale, lhs.y1 * scale, lhs.z1 * scale, lhs.w1 * scale);
+            return new Vector4(lhs.x * scale, lhs.y * scale, lhs.z * scale, lhs.w * scale);
+        }
+
+        public static Vector4 operator *(float v, Vector4 rhs)
+        {
+            return new Vector4(v * rhs.x, v * rhs.y, v * rhs.z, v * rhs.w);
+        }
+        public Vector4 Cross(Vector4 vector)
+        {
+            return new Vector4((x * vector.w) - (w * vector.x), (y * vector.z) - (z * vector.y), (z * vector.x) - (x * vector.z), (x * vector.y) - (y * vector.x));
         }
         public float Magnitude()
         {
