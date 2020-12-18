@@ -43,7 +43,7 @@ namespace MathClasses
         }
         public Vector4 Cross(Vector4 vector)
         {
-            return new Vector4((x * vector.w) - (w * vector.x), (y * vector.z) - (z * vector.y), (z * vector.x) - (x * vector.z), (x * vector.y) - (y * vector.x));
+            return new Vector4((y * vector.z) - (z * vector.y), (z * vector.x) - (x * vector.z), (y * vector.x) - (x * vector.y), (x * vector.w) - (w * vector.x));
         }
         public float Magnitude()
         {
