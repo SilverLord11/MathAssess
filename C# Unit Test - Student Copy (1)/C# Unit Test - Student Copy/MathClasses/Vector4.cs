@@ -8,7 +8,6 @@ namespace MathClasses
 {
     public class Vector4
     {
-        private object p;
         public float y;
         public float z;
         public float x;
