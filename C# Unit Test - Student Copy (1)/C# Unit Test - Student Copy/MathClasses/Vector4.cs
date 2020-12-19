@@ -9,6 +9,8 @@ namespace MathClasses
     public class Vector4
     {
         public float x, y, z, w;
+        private object p;
+        private double v;
 
         public Vector4(float x, float y, float z, float w)
         {
@@ -16,6 +18,12 @@ namespace MathClasses
             this.y = y;
             this.z = z;
             this.w = w;
+        }
+
+        public Vector4(object p, double v)
+        {
+            this.p = p;
+            this.v = v;
         }
 
         public static Vector4 operator +(Vector4 lhs, Vector4 rhs)
@@ -39,7 +47,7 @@ namespace MathClasses
         }
         public Vector4 Cross(Vector4 vector)
         {
-            return new Vector4((y * vector.z) - (z * vector.y), (z * vector.x) - (x * vector.z), (y * vector.x) - (x * vector.y), (x * vector.w) - (w * vector.x));
+            return new Vector4((y * vector.z) - (z * vector.y), (z * vector.x) - (x * vector.z), (x * vector.y) - (y * vector.x), 0);
         }
         public float Magnitude()
         {
@@ -52,9 +60,14 @@ namespace MathClasses
             return (x * vector.x) + (y * vector.y) + (z * vector.z) + (w * vector.w);
         }
 
-        public Vector4 Normalize()
+        public void Normalize()
         {
-            return new Vector4(x / x, y / y, z / z, w / w);
+            float dredd = Magnitude();
+
+            x = x / dredd;
+            y = y / dredd;
+            z = z / dredd;
+            w = w / dredd;
         }
     }
 }

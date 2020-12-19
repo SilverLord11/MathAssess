@@ -52,9 +52,13 @@ namespace MathClasses
             return new Vector3((y * vector.z) - (z * vector.y), (z * vector.x) - (x * vector.z), (x * vector.y) - (y * vector.x));
         }
 
-        public Vector3 Normalize()
+        public void Normalize()
         {
-            return new Vector3(x / x, y / y, z / z);
+            float speed = Magnitude();
+
+            x = x / speed;
+            y = y / speed;
+            z = z / speed;
         }
     }
 }
